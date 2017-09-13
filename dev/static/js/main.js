@@ -8,7 +8,7 @@ function initMap() {
     new google.maps.Marker({
         position: {lat: 38.043360, lng: 34.297904},
         map: map,
-        icon : "/static/img/general/point.png"
+        icon : "./static/img/general/point.png"
     });
 
     new google.maps.Marker({
