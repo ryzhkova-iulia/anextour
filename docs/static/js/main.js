@@ -14,21 +14,21 @@ function initMap() {
     new google.maps.Marker({
         position: {lat: 39.795480, lng: 34.649466},
         map: map,
-        icon : "/static/img/general/point.png"
+        icon : "./static/img/general/point.png"
     });
     new google.maps.Marker({
         position: {lat: 38.637925, lng: 30.903128},
         map: map,
-        icon : "/static/img/general/point.png"
+        icon : "./static/img/general/point.png"
     });
     new google.maps.Marker({
         position: {lat: 39.533306, lng: 37.352103},
         map: map,
-        icon : "/static/img/general/point.png"
+        icon : "./static/img/general/point.png"
     });
     new google.maps.Marker({
         position: {lat: 38.466090, lng: 37.879447},
         map: map,
-        icon : "/static/img/general/point.png"
+        icon : "./static/img/general/point.png"
     });
 }
