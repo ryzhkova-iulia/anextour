@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE = edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content="">
+    <link rel="stylesheet" type="text/css" href="static/fonts/fonts.css">
+    <link rel="stylesheet" type="text/css" href="static/css/main.css">
+    <title>Главная страница
+    </title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <div class="content"><a class="logo" href="#"><img class="logo__big" src="./static/img/general/page-1.svg"><img class="logo__min" src="./static/img/general/logo-min.svg"><span>Туристическое агентство</span></a>
+          <div class="info">
+            <div class="info__schedule">Пн – Вс: c 10:00 до 22:00</div><a class="info__link" href="#">Где купить?</a>
+          </div>
+          <button class="btn">Рассчитать тур</button>
+          <div class="telephone"><a class="telephone__link" href="tel:+74951627503">+7 (495) 162-75-03</a><a class="telephone__info" href="#">Получить лучшую цену</a></div>
+        </div>
+      </header>
+      <section class="block-menu">
+        <div class="content">
+          <ul class="menu">
+            <li><a href="#">Поиск тура</a></li>
+            <li><a href="#">Горящие предложения</a></li>
+            <li><a href="#">Подбор с профессионалом</a></li>
+            <li><a href="#">Контакты</a></li>
+          </ul>
+        </div>
+      </section>
+      <section class="form">
+        <div class="content">
+          <h2 class="title">Подобрать тур с профессионалом</h2>
+          <div class="form__info">
+            <div class="form__block">
+              <form class="form__content">
+                <div class="form__control">
+                  <input placeholder="Имя">
+                </div>
+                <div class="form__control">
+                  <input placeholder="Телефон">
+                </div>
+                <div class="form__control">
+                  <input placeholder="E-mail">
+                </div>
+                <button class="btn btn_form" type="submit">Подобрать тур</button>
+              </form><img class="form__img" src="./static/img/general/tiket.png">
+            </div>
+          </div>
+        </div>
+        <div class="text">
+          <p>Греция - древнейшая страна с богатой античной культурой. Туры в Грецию из Москвы, всегда пользовались популярностью среди иностранных туристов. Сюда приезжают, чтобы посетить руины величественных городов древности и насладиться пейзажами песчаных пляжей. Туры в Грецию не зря пользуются популярностью у туристов. При относительно невысоких ценах на путевки, в Греции вас ждет настоящий европейский сервис, отменная кухня и множество достопримечательностей.</p>
+          <p>Греция расположилась в южной части европейского континента. Большая часть жителей исповедуют православие. Страна занимает территорию на Балканском полуострове и большом количестве мелких и крупных островов, поэтому со многих сторон омывается разными морями: с востока – Эгейским и Фракийским; с запада – Ионическим; с юга – Критским и Средиземным.</p>
+          <p>Туры в Грецию – одно из популярных в России и мире туристических направлений, объединяющих все преимущества. Сочетание развитой культуры, приятного климата, уникальной кухни, богатой истории и возможности шопинга сделали эту страну одной из самых посещаемых</p>
+        </div>
+      </section>
+      <section id="map"></section>
+    </div>
+    <footer>
+      <div class="content">
+        <div class="footer">
+          <div class="copyright">© 2017 Anex Tour | Все права защищены</div>
+          <ul class="menu menu_footer">
+            <li><a href="#">Поиск тура</a></li>
+            <li><a href="#">Горящие предложения</a></li>
+            <li><a href="#">Подбор с профессионалом</a></li>
+            <li><a href="#">Контакты</a></li>
+          </ul>
+        </div><a class="footer_tel" href="tel:+74951627503">+7 (495) 162-75-03</a>
+      </div>
+    </footer>
+    <script src="static/js/jquery.js"></script>
+    <script src="static/js/libs.min.js"></script>
+    <script src="static/js/main.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC8ihizZtgiNr6RtnmNedVLoUiHyrJWAPI&amp;callback=initMap" async defer></script>
+  </body>
+</html>
