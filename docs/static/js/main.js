@@ -89,3 +89,41 @@ $(document).ready(function () {
         });
     });
 });
+
+
+
+
+// kalendar
+
+$(function() {
+
+
+    var pmuLocale = {
+        days		: ['Воскресенье', 'Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота', 'Воскресенье'],
+        daysShort	: ['Вос', 'Пон', 'Вто', 'Сре', 'Чет', 'Пят', 'Суб', 'Вос'],
+        daysMin		: ['Вс', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс'],
+        months		: ['Января', 'Февраля', 'Марта', 'Апреля', 'Мая', 'Июня', 'Июля', 'Августа', 'Сентября', 'Октября', 'Ноября', 'Декабря'],
+        monthsShort	: ['Янв', 'Фев', 'Мар', 'Апр', 'Май', 'Июн', 'Июл', 'Авг', 'Сен', 'Окт', 'Ноя', 'Дек']
+    }
+    $('.pickmeup-date').pickmeup({
+        mode            : 'range',
+        position		: 'bottom',
+        hide_on_select	: true,
+        default_date	: false,
+        min             : new Date,
+        calendars       : 2,
+        locale          : pmuLocale,
+        format			: 'd B'
+    });
+
+
+
+
+
+
+    $(".open__coll").click(function() {
+        $(this).closest('div').find('input').pickmeup('show');
+    });
+
+
+});
