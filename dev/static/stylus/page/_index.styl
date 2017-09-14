@@ -1,7 +1,5 @@
 .top-image
   width 100%
-  //background url("../img/general/top-bg.jpg") no-repeat center
-  //background-size cover
   height 563px
 
 
@@ -10,20 +8,31 @@
   font-size 1.375rem
   font-weight 600
   line-height 1.3em
+
 .form
   padding 70px 0
-  background-color #bbc9d2
   &__block
+    width 67%
     flexRow()
-    max-width 700px
     margin auto
     margin-top 75px
+    .title
+      color #FFFFFF
+      text-align center
+      width 100%
   &__img
     width 100%
-    max-width 296px
+    max-width 253px
+    margin-bottom: -60px;
+    margin-top: 66px;
+    margin-right: 25px;
+.form__info
+  flexRow()
+.content_color
+  background-color #0372bf
 
 .form__control
-  width 275px
+  width 250px
   input
     padding-left 18px
     border none
@@ -33,6 +42,11 @@
 
 .form__content
   flexColumn()
+  width 100%
+.form__content-inner
+  flexRow()
+  width 100%
+  margin-top 40px
 
 .text
   margin-top 90px
@@ -47,5 +61,23 @@
   height 800px
 
 .oofers
-  padding 60px
+  padding 60px 0
+
+.tooltip
+  color fontColor
+  text-align center
+  .footer_tel
+    color fontColor
+    font-size 1.625rem
+    font-family 'SF UI Display'
+  &__info
+    margin-top 15px
+    max-width 230px
+    flexColumn()
+  span
+    margin-bottom 10px
+  .btn_form
+    margin-top 15px
+    font-size 1.125rem
+
 

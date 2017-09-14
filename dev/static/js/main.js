@@ -1,44 +1,73 @@
-
 function initMap() {
     var map = new google.maps.Map(document.getElementById('map'), {
         zoom: 11,
         center: {lat: 55.763383, lng: 37.618743}
     });
 
-    new google.maps.Marker({
-        position: {lat: 55.641860, lng: 37.523489},
-        map: map,
-        icon : "./static/img/general/point.png"
-    });
+    function putPointToMap(point) {
 
-    new google.maps.Marker({
-        position: {lat: 55.643896, lng: 37.526313},
-        map: map,
-        icon : "./static/img/general/point.png"
-    });
+        var balloonHtml = '<div class="tooltip">'+
+                '<img src="./static/img/general/page-1.svg">'+
+                '<a href="tel:' + point.phone + '" class="footer_tel">' + point.phone + '</a>' +
+                '<div class="tooltip__info">' + point.info + '</div>' +
+                '<button class="btn btn_form">Обратный звонок</button>' +
+            '</div>';
 
-    new google.maps.Marker({
-        position: {lat: 55.634722, lng: 37.507164},
-        map: map,
-        icon : "./static/img/general/point.png"
-    });
+        var infoWindow = new google.maps.InfoWindow({
+            content: balloonHtml
+        });
 
-    new google.maps.Marker({
-        position: {lat: 55.676946, lng: 37.543212},
-        map: map,
-        icon : "./static/img/general/point.png"
-    });
-    new google.maps.Marker({
-        position: {lat: 55.727053, lng: 37.571365},
-        map: map,
-        icon : "./static/img/general/point.png"
-    });
-    new google.maps.Marker({
-        position: {lat: 55.736235, lng: 37.589904},
-        map: map,
-        icon : "./static/img/general/point.png"
-    });
+        new google.maps.Marker({
+            position: points[i].position,
+            map: map,
+            icon : "./static/img/general/point.png"
+        }).addListener('click', function() {
+            infoWindow.open(map, this);
+        });
+    }
+
+    var points = [
+        {
+            phone: "+7 (925) 090-86-09",
+            info: "<span>ул. Профсоюзная, д. 104</span>" + "<span>Беляево, Калужская, Коньково</span>" + "<span>Пн-Вс: 10:00-22:00</span>",
+            position: {lat: 55.661749, lng: 37.545636}
+        },
+        {
+            phone: "+7 (985) 763-96-14",
+            info: "<span>ул. Профсоюзная, д. 102 стр 1. ТЦ «Ареал»</span>" +  "<span>Беляево, Калужская</span>" + "<span>Пн-Вс: 10:00-22:00</span>",
+            position: {lat: 55.643817, lng: 37.526334}
+        },
+        {
+            phone: "+7 (499) 550-88-76",
+            info: "<span>ул. Миклухо-Маклая , д 36 А, торговый центр МЦ. Отдельный вход с улицы рядом с аптекой, 2 й этаж</span>"  + "<span>Коньково, Беляево</span>" + "<span>Пн-Вс: 10:00-22:00</span>",
+            position: {lat: 55.639669, lng: 37.534499}
+        },
+        {
+            phone: "+7 (495) 669-33-21",
+            info: "<span>ул. Профсоюзная, д. 12 ТЦ «Олиан»</span>" + "<span>Академическая, Профсоюзная, Октябрьская</span>" + "<span>Пн-Сб: 10:00-21:00, Вс: 10:00-20:00</span>",
+            position: {lat: 55.667955, lng: 37.552238}
+        },
+        {
+            phone: "+7 (929) 661-43-41",
+            info: "<span>Комсомольский проспект д. 4 ТЦ</span>" + "<span>Фрунзенская, Парк Культуры</span>" + "<span>Пн-Вс: 10:00-22:00</span>",
+            position: {lat: 55.733074, lng: 37.592294}
+        },
+        {
+            phone: "+7 (495) 162-56-07",
+            info: "<span>Зубовский б-р, д.13 стр 1</span>" +  "<span>Парк Культуры, Фрунзенская, Октябрьская</span>" + "<span>Пн-Пт: 10:00-20:00 Сб: 11:00-16-00</span>",
+            position: {lat: 55.735727, lng: 37.592196}
+        }
+    ];
+
+    for (var i = 0; i < points.length; i++) {
+        putPointToMap(points[i]);
+    }
+
+
 }
+
+
+
 
 
 $(document).ready(function () {
@@ -63,6 +92,37 @@ $(document).ready(function () {
                 }
                 $( item.src).find('.title_form').text(title);
             }
+        }
+    });
+
+    $('.js-callback').magnificPopup({
+        items: {
+            src: '#popup',
+            type: 'inline'
+        },
+
+        callbacks: {
+            elementParse: function(item) {
+
+                var mp = $.magnificPopup.instance,
+                    cur = mp.st.el,
+                    title = cur.attr('data-header'),
+                    curImg = cur.attr("src");
+
+                if (curImg != undefined ) {
+                    $( item.src).find('.form-image').attr("src", curImg);
+                } else {
+                    // $( item.src).find('.form-image').hide();
+                }
+                $( item.src).find('.title_form').text(title);
+            }
+        }
+    });
+
+    $('.js-sent').magnificPopup({
+        items: {
+            src: '#sucess',
+            type: 'inline'
         }
     });
 

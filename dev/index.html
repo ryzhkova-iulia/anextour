@@ -19,7 +19,7 @@
             <div class="info__schedule">Пн – Вс: c 10:00 до 22:00</div><a class="info__link" href="#map">Где купить?</a>
           </div>
           <button class="btn js__pop-callback">Рассчитать тур</button>
-          <div class="telephone"><a class="telephone__link" href="tel:+74951627503">+7 (495) 162-75-03</a><a class="telephone__info" href="#">Получить лучшую цену</a></div>
+          <div class="telephone"><a class="telephone__link" href="tel:+74951627503">+7 (495) 162-75-03</a><a class="telephone__info js-callback" href="#" data-title="Заказать обратный звонок">Получить лучшую цену</a></div>
         </div>
       </header>
       <section class="block-menu">
@@ -33,29 +33,33 @@
         </div>
       </section>
       <section class="top-image" id="search"></section>
+      <!--.tv-hot-tours.tv-moduleid-950544-->
+      <!--script(type='text/javascript', src='https://tourvisor.ru/module/init.js')-->
       <section class="oofers" id="hot">
         <div class="content">
           <h2 class="title">Подборка горящих предложений</h2>
         </div>
       </section>
       <section class="form" id="choose">
-        <div class="content">
-          <h2 class="title">Подобрать тур с профессионалом</h2>
+        <div class="content content_color">
           <div class="form__info">
             <div class="form__block">
+              <h2 class="title">Подобрать тур с профессионалом</h2>
               <form class="form__content">
-                <div class="form__control">
-                  <input placeholder="Имя">
-                </div>
-                <div class="form__control">
-                  <input placeholder="Телефон">
-                </div>
-                <div class="form__control">
-                  <input placeholder="E-mail">
+                <div class="form__content-inner">
+                  <div class="form__control">
+                    <input placeholder="Имя">
+                  </div>
+                  <div class="form__control">
+                    <input placeholder="Телефон">
+                  </div>
+                  <div class="form__control">
+                    <input placeholder="E-mail">
+                  </div>
                 </div>
                 <button class="btn btn_form" type="submit">Подобрать тур</button>
-              </form><img class="form__img" src="./static/img/general/tiket.png">
-            </div>
+              </form>
+            </div><img class="form__img" src="./static/img/general/bitmap.png">
           </div>
         </div>
         <div class="content">
@@ -67,16 +71,20 @@
         </div>
       </section>
       <section id="map"></section>
+      <div class="form-callback mfp-hide" id="popup">
+        <form class="form__content" id="form_pop_callback" name="обратный звонок" data-callkeeper_name="Обратный звонок">
+          <div class="title_form">Заказать обратный звонок</div>
+          <div class="form__control">
+            <input placeholder="Имя">
+          </div>
+          <div class="form__control">
+            <input placeholder="Телефон" name="phone">
+          </div>
+          <button class="btn btn_form js-sent" type="">Подобрать тур</button>
+          <div class="form-disclaimer">Нажимая на кнопку, я соглашаюсь на обработку моих персональных данных в соответствии с<a href="https://travel-times.ru/agreement.html" rel="nofollow" target="_blank"> Политикой конфиденциальности</a></div>
+        </form>
+      </div>
       <div class="form-callback mfp-hide" id="popup-form">
-        <!--form#form_pop_callback.form__content(name="обратный звонок", data-callkeeper_name="Обратный звонок")-->
-        <!--    .title_form Заказать обратный звонок-->
-        <!--    .form__control-->
-        <!--        input(placeholder="Имя")-->
-        <!--    .form__control-->
-        <!--        input(placeholder="Телефон" name="phone")-->
-        <!--    button.btn.btn_form(type="submit") Подобрать тур-->
-        <!--    span.form-disclaimer-->
-        <!--         | Нажав кнопку «Отправить», я даю согласие на обработку моих персональных данных и получение рекламы.-->
         <form class="popap formBlock_1" id="three">
           <h2>Заявка на подбор тура</h2>
           <div class="colendar-wrapp">
@@ -118,7 +126,9 @@
           </div>
         </form>
       </div>
-      <div class="popup-form mfp-hide" id="sucess"><span class="popup-form__title">Спасибо. Ваша заявка отправлена</span></div>
+      <div class="sent mfp-hide" id="sucess">
+        <div class="sent__title">Спасибо!<span>Ваша заявка отправлена!</span><img class="sent__img" src="./static/img/general/group-9.svg"></div>
+      </div>
     </div>
     <footer>
       <div class="content">

@@ -5,25 +5,28 @@ block title
 
 block content
 	section.top-image#search
+	//.tv-hot-tours.tv-moduleid-950544
+	//script(type='text/javascript', src='https://tourvisor.ru/module/init.js')
 
 	section.oofers#hot
 		.content
 			h2.title Подборка горящих предложений
 
 	section.form#choose
-		.content
-			h2.title Подобрать тур с профессионалом
+		.content.content_color
 			.form__info
 				.form__block
+					h2.title Подобрать тур с профессионалом
 					form.form__content
-						.form__control
-							input(placeholder="Имя")
-						.form__control
-							input(placeholder="Телефон")
-						.form__control
-							input(placeholder="E-mail")
+						.form__content-inner
+							.form__control
+								input(placeholder="Имя")
+							.form__control
+								input(placeholder="Телефон")
+							.form__control
+								input(placeholder="E-mail")
 						button.btn.btn_form(type="submit") Подобрать тур
-					img(src="./static/img/general/tiket.png").form__img
+				img(src="./static/img/general/bitmap.png").form__img
 		.content
 			.text
 				p Греция - древнейшая страна с богатой античной культурой. Туры в Грецию из Москвы, всегда пользовались популярностью среди иностранных туристов. Сюда приезжают, чтобы посетить руины величественных городов древности и насладиться пейзажами песчаных пляжей. Туры в Грецию не зря пользуются популярностью у туристов. При относительно невысоких ценах на путевки, в Греции вас ждет настоящий европейский сервис, отменная кухня и множество достопримечательностей.
@@ -33,5 +36,7 @@ block content
 				p Туры в Грецию – одно из популярных в России и мире туристических направлений, объединяющих все преимущества. Сочетание развитой культуры, приятного климата, уникальной кухни, богатой истории и возможности шопинга сделали эту страну одной из самых посещаемых
 
 	section#map
+
+
 
 	include ../modules/callback
