@@ -15,23 +15,25 @@
       <header>
         <div class="content"><a class="logo" href="#"><img class="logo__big" src="./static/img/general/page-1.svg"><img class="logo__min" src="./static/img/general/logo-min.svg"><span>Туристическое агентство</span></a>
           <div class="info">
-            <div class="info__schedule">Пн – Вс: c 10:00 до 22:00</div><a class="info__link" href="#">Где купить?</a>
+            <div class="info__schedule">Пн – Вс: c 10:00 до 22:00</div><a class="info__link" href="#map">Где купить?</a>
           </div>
-          <button class="btn">Рассчитать тур</button>
+          <button class="btn js__pop-callback">Рассчитать тур</button>
           <div class="telephone"><a class="telephone__link" href="tel:+74951627503">+7 (495) 162-75-03</a><a class="telephone__info" href="#">Получить лучшую цену</a></div>
         </div>
       </header>
       <section class="block-menu">
         <div class="content">
           <ul class="menu">
-            <li><a href="#">Поиск тура</a></li>
-            <li><a href="#">Горящие предложения</a></li>
-            <li><a href="#">Подбор с профессионалом</a></li>
-            <li><a href="#">Контакты</a></li>
+            <li><a href="#search">Поиск тура</a></li>
+            <li><a href="#hot">Горящие предложения</a></li>
+            <li><a href="#choose">Подбор с профессионалом</a></li>
+            <li><a href="#map">Контакты</a></li>
           </ul>
         </div>
       </section>
-      <section class="form">
+      <section class="top-image" id="search"></section>
+      <section class="oofers" id="hot"></section>
+      <section class="form" id="choose">
         <div class="content">
           <h2 class="title">Подобрать тур с профессионалом</h2>
           <div class="form__info">
@@ -60,6 +62,58 @@
         </div>
       </section>
       <section id="map"></section>
+      <div class="form-callback mfp-hide" id="popup-form">
+        <!--form#form_pop_callback.form__content(name="обратный звонок", data-callkeeper_name="Обратный звонок")-->
+        <!--    .title_form Заказать обратный звонок-->
+        <!--    .form__control-->
+        <!--        input(placeholder="Имя")-->
+        <!--    .form__control-->
+        <!--        input(placeholder="Телефон" name="phone")-->
+        <!--    button.btn.btn_form(type="submit") Подобрать тур-->
+        <!--    span.form-disclaimer-->
+        <!--         | Нажав кнопку «Отправить», я даю согласие на обработку моих персональных данных и получение рекламы.-->
+        <form class="popap formBlock_1" id="three">
+          <h2>Заявка на подбор тура</h2>
+          <div class="colendar-wrapp">
+            <input class="pickmeup-date" type="text" name="interval" placeholder="Когда Вы хотите вылелеть" data-required="1"><img class="open__coll" src="./static/img/general/calendar.svg" alt="">
+          </div>
+          <div class="wrapp__select clearfix">
+            <div class="select__items"><span>Количество ночей</span>
+              <div class="input_wrapp nomber"><span class="minus" data-min="2"><span class="gorizon"></span></span>
+                <input class="notClear" type="text" name="nights" data-required="1" value="7"><span class="plus"><span class="gorizon"></span><span class="vertically"></span></span>
+              </div>
+            </div>
+            <div class="select__items"><span>Взрослых</span>
+              <div class="input_wrapp nomber"><span class="plus"><span class="gorizon"></span><span class="vertically"></span></span>
+                <input class="notClear" type="text" name="adults" data-required="1" value="2"><span class="minus" data-min="1"><span class="gorizon"></span></span>
+              </div>
+            </div>
+            <div class="select__items">
+              <div class="input_wrapp left">
+                <label>
+                  <input class="radio notClear" type="radio" name="equal" value="2" checked=""><span class="radio-custom"></span><span class="label">+/- 2 ночи</span>
+                </label>
+                <label>
+                  <input class="radio notClear" type="radio" name="equal" value="1"><span class="radio-custom"></span><span class="label">ровно</span>
+                </label>
+              </div>
+            </div>
+            <div class="select__items"><span>Детей</span>
+              <div class="input_wrapp nomber"><span class="plus"><span class="gorizon"></span><span class="vertically"></span></span>
+                <input class="notClear" type="text" name="childs" value="0"><span class="minus"><span class="gorizon"></span></span>
+              </div>
+            </div>
+          </div>
+          <input type="text" placeholder="Ваше имя" name="name" data-required="1">
+          <input class="maskPhone" type="text" placeholder="Ваш телефон" name="phone" maxlength="17">
+          <input type="text" placeholder="Ваш e-mail" name="email"><a class="main__btn sendRequest" href="#thank" data-group=".formBlock_1" data-popup="#thank" data-analytics-category="lead" data-analytics-target="sendRequest_search_request">Отправить заявку</a>
+          
+          <div class="agreement-link">
+            <input type="checkbox" name="agreement" value="" checked=""> Я соглашаюсь на обработку моих персональных данных в соответствии с<a href="https://travel-times.ru/agreement.html" rel="nofollow" target="_blank"> Политикой конфиденциальности</a>
+          </div>
+        </form>
+      </div>
+      <div class="popup-form mfp-hide" id="sucess"><span class="popup-form__title">Спасибо. Ваша заявка отправлена</span></div>
     </div>
     <footer>
       <div class="content">

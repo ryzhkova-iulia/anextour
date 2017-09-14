@@ -4,7 +4,11 @@ block title
 	| Главная страница
 
 block content
-	section.form
+	section.top-image#search
+
+	section.oofers#hot
+
+	section.form#choose
 		.content
 			h2.title Подобрать тур с профессионалом
 			.form__info
@@ -27,3 +31,5 @@ block content
 				p Туры в Грецию – одно из популярных в России и мире туристических направлений, объединяющих все преимущества. Сочетание развитой культуры, приятного климата, уникальной кухни, богатой истории и возможности шопинга сделали эту страну одной из самых посещаемых
 
 	section#map
+
+	include ../modules/callback

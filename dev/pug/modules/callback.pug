@@ -1,0 +1,95 @@
+
+
+#popup-form.form-callback.mfp-hide
+    //form#form_pop_callback.form__content(name="обратный звонок", data-callkeeper_name="Обратный звонок")
+    //    .title_form Заказать обратный звонок
+    //    .form__control
+    //        input(placeholder="Имя")
+    //    .form__control
+    //        input(placeholder="Телефон" name="phone")
+    //    button.btn.btn_form(type="submit") Подобрать тур
+    //    span.form-disclaimer
+    //         | Нажав кнопку «Отправить», я даю согласие на обработку моих персональных данных и получение рекламы.
+    form#three.popap.formBlock_1
+        h2 Заявка на подбор тура
+        .colendar-wrapp
+            input.pickmeup-date(type="text", name="interval", placeholder="Когда Вы хотите вылелеть", data-required="1")
+            img.open__coll(src="./static/img/general/calendar.svg", alt="")
+        .wrapp__select.clearfix
+            .select__items
+                span Количество ночей
+                |
+                .input_wrapp.nomber
+                    span.minus(data-min="2")
+                        span.gorizon
+                    |
+                    input.notClear(type="text", name="nights", data-required="1", value="7")
+                    |
+                    span.plus
+                        span.gorizon
+                        |
+                        span.vertically
+            |
+            .select__items
+                span Взрослых
+                |
+                .input_wrapp.nomber
+                    span.plus
+                        span.gorizon
+                        |
+                        span.vertically
+                    |
+                    input.notClear(type="text", name="adults", data-required="1", value="2")
+                    |
+                    span.minus(data-min="1")
+                        span.gorizon
+            |
+            .select__items
+                .input_wrapp.left
+                    label
+                        input.radio.notClear(type="radio", name="equal", value="2", checked="")
+                        |
+                        span.radio-custom
+                        |
+                        span.label +/- 2 ночи
+                    |
+                    label
+                        input.radio.notClear(type="radio", name="equal", value="1")
+                        |
+                        span.radio-custom
+                        |
+                        span.label ровно
+            |
+            .select__items
+                span Детей
+                |
+                .input_wrapp.nomber
+                    span.plus
+                        span.gorizon
+                        |
+                        span.vertically
+                    |
+                    input.notClear(type="text", name="childs", value="0")
+                    |
+                    span.minus
+                        span.gorizon
+        |
+        input(type="text", placeholder="Ваше имя", name="name", data-required="1")
+        |
+        input.maskPhone(type="text", placeholder="Ваш телефон", name="phone", maxlength="17")
+        |
+        input(type="text", placeholder="Ваш e-mail", name="email")
+        |
+        a.main__btn.sendRequest(href="#thank", data-group=".formBlock_1", data-popup="#thank", data-analytics-category="lead", data-analytics-target="sendRequest_search_request") Отправить заявку
+        |
+        |
+        .agreement-link
+            input(type="checkbox", name="agreement", value="", checked="")
+            |  Я соглашаюсь на обработку моих персональных данных в соответствии с
+            a(href="https://travel-times.ru/agreement.html", rel="nofollow", target="_blank")  Политикой конфиденциальности
+
+
+
+
+#sucess.popup-form.mfp-hide
+    span.popup-form__title Спасибо. Ваша заявка отправлена
