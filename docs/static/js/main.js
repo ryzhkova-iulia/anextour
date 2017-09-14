@@ -153,6 +153,8 @@ $(function() {
 
 });
 
+
+// paralax
 $( document ).ready(function() {
-    $('.top-image').parallax({imageSrc: '/static/img/general/top-bg.jpg'});
+    $('.top-image').parallax({imageSrc: './static/img/general/top-bg.jpg'});
 });
