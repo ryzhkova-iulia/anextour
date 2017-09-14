@@ -9082,9 +9082,6 @@ header .content {
 }
 .top-image {
   width: 100%;
-  background: url("../img/general/top-bg.jpg") no-repeat center;
-  -moz-background-size: cover;
-       background-size: cover;
   height: 563px;
 }
 .title {

@@ -148,4 +148,11 @@ $(function() {
         });
     });
 
+
+
+
+});
+
+$( document ).ready(function() {
+    $('.top-image').parallax({imageSrc: '/static/img/general/top-bg.jpg'});
 });
