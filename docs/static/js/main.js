@@ -126,4 +126,26 @@ $(function() {
     });
 
 
+// form count
+    $(".nomber").each(function( ){
+        var col = $(this).find('input').val();
+        var plus = $(this).find('.plus');
+        var col_nomber = $(this).find('input');
+        var minus = $(this).find('.minus');
+
+        $(plus).click(function() {
+            col++;
+            col_nomber.val(col);
+        });
+
+        $(minus).click(function() {
+            var min_value = ($(this).data('min') ? $(this).data('min') : 0);
+
+            if(col > min_value){
+                col--;
+                col_nomber.val(col);
+            }
+        });
+    });
+
 });
