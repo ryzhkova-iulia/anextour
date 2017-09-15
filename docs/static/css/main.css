@@ -9286,6 +9286,8 @@ header .content {
 .tooltip {
   color: #5d5b5b;
   text-align: center;
+  margin: 20px 0;
+  margin-left: 25px;
 }
 .tooltip .footer_tel {
   color: #5d5b5b;
@@ -9293,6 +9295,7 @@ header .content {
   font-family: 'SF UI Display';
 }
 .tooltip__info {
+  margin: auto;
   margin-top: 15px;
   max-width: 230px;
   display: -webkit-box;

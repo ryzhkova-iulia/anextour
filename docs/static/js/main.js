@@ -4,13 +4,15 @@ function initMap() {
         center: {lat: 55.763383, lng: 37.618743}
     });
 
+    var currWindow =false;
+
     function putPointToMap(point) {
 
         var balloonHtml = '<div class="tooltip">'+
                 '<img src="./static/img/general/page-1.svg">'+
                 '<a href="tel:' + point.phone + '" class="footer_tel">' + point.phone + '</a>' +
                 '<div class="tooltip__info">' + point.info + '</div>' +
-                '<button class="btn btn_form">Обратный звонок</button>' +
+                '<button class="btn btn_form js-callback">Обратный звонок</button>' +
             '</div>';
 
         var infoWindow = new google.maps.InfoWindow({
@@ -22,8 +24,13 @@ function initMap() {
             map: map,
             icon : "./static/img/general/point.png"
         }).addListener('click', function() {
+            if( currWindow ) {
+                currWindow.close();
+            }
+            currWindow = infoWindow;
             infoWindow.open(map, this);
         });
+
     }
 
     var points = [
@@ -95,29 +102,36 @@ $(document).ready(function () {
         }
     });
 
-    $('.js-callback').magnificPopup({
-        items: {
-            src: '#popup',
-            type: 'inline'
-        },
 
-        callbacks: {
-            elementParse: function(item) {
+    $( document ).on( 'click', '.js-callback', function(e) {
+        $( '.js-callback' ).magnificPopup({
+            items: {
+                src: '#popup',
+                type: 'inline'
+            },
 
-                var mp = $.magnificPopup.instance,
-                    cur = mp.st.el,
-                    title = cur.attr('data-header'),
-                    curImg = cur.attr("src");
+            callbacks: {
+                elementParse: function(item) {
 
-                if (curImg != undefined ) {
-                    $( item.src).find('.form-image').attr("src", curImg);
-                } else {
-                    // $( item.src).find('.form-image').hide();
+                    var mp = $.magnificPopup.instance,
+                        cur = mp.st.el,
+                        title = cur.attr('data-header'),
+                        curImg = cur.attr("src");
+
+                    if (curImg != undefined ) {
+                        $( item.src).find('.form-image').attr("src", curImg);
+                    } else {
+                        // $( item.src).find('.form-image').hide();
+                    }
+                    $( item.src).find('.title_form').text(title);
                 }
-                $( item.src).find('.title_form').text(title);
             }
-        }
+        }).magnificPopup('open');
+        e.preventDefault();
     });
+
+
+
 
     $('.js-sent').magnificPopup({
         items: {
